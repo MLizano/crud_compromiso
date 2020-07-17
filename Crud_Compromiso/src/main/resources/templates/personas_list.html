@@ -34,10 +34,12 @@
 				<a th:href="@{/new}" class="btn btn-success">Nuevo</a>
 			</div>
 		</div>
+		<br>
 
-		<br> <br>
+		<input id="txtSearch" type="text" name="keyword" />
+		<br>
 
-		<table class="table">
+		<table id="personasTable" class="table">
 			<thead>
 				<tr>
 					<th>Id</th>
@@ -67,6 +69,36 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="/funciones.js"></script>
-
+	
+	<script th:inline = 'javascript'>
+	
+		var personas = $personas;
+	
+		$('#txtSearch').on('keyup',function(){
+			var value = $(this).val();
+			console.log('Value = ' + value);
+	
+			//Muestra las personas filtradas
+			var data = filterFunction(value, personas);
+	
+			//Reconstruir la tabla con la información filtrada
+			rebuildTable(data);
+		});
+		
+		function filterFunction(value, data){
+	        var filteredData =[];
+	        for (var i = 0; i < data.length; i++) {
+	            value = value.toLowerCase();
+	            var nombre = data[i].Usuario_Nombre.toLowerCase();
+	            var login = data[i].Usuario_Login.toLowerCase();
+	            
+	            if (nombre.includes(value) || login.includes(value)) {
+	                filterData.push(data[i]);
+	            }
+	        }
+	        return filteredData;
+	    };
+	</script>
+	
 </body>
 </html>

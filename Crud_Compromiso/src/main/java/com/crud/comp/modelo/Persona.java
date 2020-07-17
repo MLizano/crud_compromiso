@@ -1,7 +1,6 @@
 package com.crud.comp.modelo;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

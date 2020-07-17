@@ -38,54 +38,54 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="rubro">Rubro:</label>
-									<input id="rubro" th:field="*{Rubro_id}" type="text" class="form-control" disabled="disabled"/>
+									<input id="rubro" th:field="*{Rubro_id}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="empleado">Empleado:</label>
-									<input id="empleado" th:field="*{Emp_id}" type="text" class="form-control" disabled="disabled"/>
+									<input id="empleado" th:field="*{Emp_id}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="estado">Estado_id:</label>
-									<input id="estado" th:field="*{Estado_id}" type="text" class="form-control" disabled="disabled"/>
+									<input id="estado" th:field="*{Estado_id}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="nombre">Nombre del Rubro:</label>
-									<input id="nombre" th:field="*{Rubro_Nombre}" type="text" class="form-control" disabled="disabled"/>
+									<input id="nombre" th:field="*{Rubro_Nombre}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="fecha">Fecha de actualización:</label>
-									<input id="fecha" th:field="*{Rubro_Fec_Actualizacion}" type="text" class="form-control" disabled="disabled"/>
+									<input id="fecha" th:field="*{Rubro_Fec_Actualizacion}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="ejecucion">Tipo de ejecución:</label>
-									<input id="ejecucion" th:field="*{Tipo_Ejecucion_id}" type="text" class="form-control" disabled="disabled"/>
+									<input id="ejecucion" th:field="*{Tipo_Ejecucion_id}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 								<div class="form-group">
 									<label for="solicitud">Solicitud:</label>
-									<input id="solicitud" th:field="*{Ind_Solicitud}" type="text" class="form-control" disabled="disabled"/>
+									<input id="solicitud" th:field="*{Ind_Solicitud}" type="text" class="form-control" readonly="readonly"/>
 								</div>
 							</div>
 							
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="validador">Validador Categoría:</label>
-									<input id="validador" th:field="*{Id_Validador_Categoria}" type="text" class="form-control" maxlength="3"/>
+									<input id="validador" th:field="*{Id_Validador_Categoria}" type="number" class="form-control" required min="0" max="99" />
 								</div>
 								<div class="form-group">
 									<label for="stock">En Stock:</label>
-									<input id="stock" th:field="*{En_Stock}" type="text" class="form-control" maxlength="1" required/>
+									<input id="stock" th:field="*{En_Stock}" type="number" class="form-control" required min="0" max="9" />
 								</div>
 								<div class="form-group">
 									<label for="estatus">Estatus:</label>
-									<input id="estatus" th:field="*{Estatus}" type="text" class="form-control" maxlength="1" required/>
+									<input id="estatus" th:field="*{Estatus}" type="text" class="form-control" required maxlength="1"  />
 								</div>
 								<div class="form-group">
 									<label for="tipo_rubro">Tipo de rubro:</label>
-									<input id="tipo_rubro" th:field="*{Tipo_Rubro}" type="text" class="form-control" maxlength="1" required/>
+									<input id="tipo_rubro" th:field="*{Tipo_Rubro}" type="text" class="form-control" required maxlength="1" />
 								</div>
 								<div class="form-group">
 									<label for="organizacion">Organización:</label>
-									<input id="organizacion" th:field="*{Id_Organizacion}" type="text" class="form-control" maxlength="1" required/>
+									<input id="organizacion" th:field="*{Id_Organizacion}" type="number" class="form-control" required min="0" max="9" />
 								</div>
 							</div>
 						</div>

@@ -13,5 +13,4 @@ public interface IRubroService {
 	public int save(Rubro p);
 
 	public void delete(int id);
-
 }
