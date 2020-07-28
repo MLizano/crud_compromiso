@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Personas</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div
+		style="background-color: darkslategray; height: 90px; padding: 25px;">
+		<div class="row" style="width: 500px; margin: 0 auto;">
+			<div class="col-4">
+				<a th:href="@{/listar}" class="btn btn-light">Personas</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/rubro_listar}" class="btn btn-light">Rubros</a>
+			</div>
+			<div class="col-4">
+				<a th:href="@{/logout}" class="btn btn-warning">Cerrar sesión</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container mt-4">
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Estado</th>
+					<th>Nombre</th>
+					<th>Fecha Act.</th>
+					<th>Stock</th>
+					<th>Status</th>
+					<th>Tipo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="rubro:${rubros}">
+					<td th:text="${rubro.Rubro_id}"></td>
+					<td th:text="${rubro.Estado_id}"></td>
+					<td th:text="${rubro.Rubro_Nombre}"></td>
+					<td th:text="${rubro.Rubro_Fec_Actualizacion}"></td>
+					<td th:text="${rubro.En_Stock}"></td>
+					<td th:text="${rubro.Estatus}"></td>
+					<td th:text="${rubro.Tipo_Rubro}"></td>
+
+					<td><a th:href="@{rubro_listar/}+${rubro.Rubro_id}"
+						class="btn btn-info">Editar</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="/funciones.js"></script>
+
+</body>
+</html>

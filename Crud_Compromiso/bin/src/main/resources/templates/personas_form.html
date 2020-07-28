@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Formulario de personas</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container mt-4">
+		<div class="col-sm-12">
+			<form th:action="@{/save}" th:object=${persona} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							<input th:field="*{Usuario_Nombre}" type="text"
+								class="form-control" disabled="disabled"
+								style="border: none; background: border-box; font-size: inherit; font-style: italic;" />
+						</h3>
+						<div class="row">
+							<div class="col-6">
+								<label>Id:</label> <input th:field="*{Usuario_Id}" type="text"
+									class="form-control" readonly="readonly" style="width: 100px;" />
+							</div>
+							<div class="col-4"></div>
+							<div class="col-2">
+								<a th:href="@{/listar}" class="btn btn-warning">Regresar</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- ------------------------------------------------------------------------------------------ -->
+					<div class="card-body">
+						<div class="row">
+
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="usu_nombre">Nombre de usuario:</label>
+									<input id="usu_nombre" th:field="*{Usuario_Nombre}" type="text" class="form-control" required maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="usu_login">Login:</label>
+									<input id="usu_login" th:field="*{Usuario_Login}" type="text" class="form-control" required maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="usu_mail">Email:</label>
+									<input id="usu_mail" th:field="*{Usuario_Email}" type="email" class="form-control" required />
+								</div>
+								<div class="form-group">
+									<label for="nombre">Nombre:</label>
+									<input id="nombre" th:field="*{Nombre}" type="text" class="form-control" required maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="apell_pat">1° Apellido:</label>
+									<input id="apell_pat" th:field="*{Apellido_Paterno}" type="text" class="form-control" required maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="apell_mat">2° Apellido:</label>
+									<input id="apell_mat" th:field="*{Apellido_Materno}" type="text" class="form-control" required maxlength="40" />
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="id_puesto">Puesto Id:</label>
+									<input id="id_puesto" th:field="*{Id_Puesto}" type="number" class="form-control" required min="0" max="999" />
+								</div>
+								<div class="form-group">
+									<label for="id_ceco">Ceco Id:</label>
+									<input id="id_ceco" th:field="*{Id_Ceco}" type="number" class="form-control" required min="0" max="999" />
+								</div>
+								<div class="form-group">
+									<label for="tipo_usr">Tipo Usuario:</label>
+									<input id="tipo_usr" th:field="*{Tipo_Usr}" type="text" class="form-control" required maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="clave">Clave Puesto:</label>
+									<input id="clave" th:field="*{Puesto_Clave}" type="text" class="form-control" maxlength="40" />
+								</div>
+								<div class="form-group">
+									<label for="id_org">Organización Id:</label>
+									<input id="id_org" th:field="*{Id_Organizacion}" type="number" class="form-control" required min="0" max="99" />
+								</div>
+								<div class="form-group">
+									<label for="id_jefe">Jefe Id:</label>
+									<input id="id_jefe" th:field="*{Id_Jefe}" type="number" class="form-control" min="0" max="999" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ------------------------------------------------------------------------------------------ -->
+					<div class="card-footer">
+						<div class="row">
+							<div class="col-10">
+								<input type="submit" value="Guardar" class="btn btn-success" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
